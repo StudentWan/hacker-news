@@ -11,3 +11,7 @@ In order to learn the following content about react.
 - [X] React advanced knowledge: lifecycle hook, conditional render, error handler, code orgnization, test, PropTypes
 - [X] React higher level knowledge: ref, HOC, etc.
 - [X] React state management: state hoisting, truth of setState
+
+#### License
+
+[MIT](https://opensource.org/licenses/MIT)
