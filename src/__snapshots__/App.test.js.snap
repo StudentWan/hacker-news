@@ -10,7 +10,6 @@ exports[`App has a valid snapshot 1`] = `
     <form
       onSubmit={[Function]}
     >
-      Search
       <input
         onChange={[Function]}
         type="text"
@@ -123,7 +122,6 @@ exports[`Search has a valid snapshot 1`] = `
 <form
   onSubmit={[Function]}
 >
-  Search
   <input
     onChange={[Function]}
     type="text"
@@ -156,7 +154,7 @@ exports[`Table has a valid snapshot 1`] = `
   >
     <span>
       <button
-        className="button-active"
+        className=""
         onClick={[Function]}
         type="button"
       >
