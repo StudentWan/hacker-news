@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import App, { Search, Button, Table } from './App';
+import App, { Search, Button, Table, Loading, Sort } from './App';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -84,7 +84,10 @@ describe('Table', () => {
       { title: '1', author: '1', nums_comments: 1, points: 2, objectID: 'y' },
       { title: '2', author: '2', nums_comments: 1, points: 2, objectID: 'z' }
     ],
-    onDismiss() { }
+    onDismiss() { },
+    sortKey: 'TITLE',
+    onSort() {},
+    isSortReverse: false
   }
 
   it('shows two items in list', () => {
@@ -107,3 +110,40 @@ describe('Table', () => {
   });
 
 });
+
+describe('Loading', () => {
+  it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<Loading />, div);
+    ReactDOM.unmountComponentAtNode(div);
+  })
+
+  test('hava a valid snapshot', () => {
+    const component = renderer.create(<Loading />);
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  })
+});
+
+describe('Sort', () => {
+  const props = {
+    sortKey: 'TITLE',
+    onSort() { },
+    activeSortKey: 'TITLE',
+    children: 'title'
+  }
+
+  it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<Sort {...props} />, div);
+    ReactDOM.unmountComponentAtNode(div);
+  })
+
+  test('hava a valid snapshot', () => {
+    const component = renderer.create(<Sort {...props} />);
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  })
+});
+
+

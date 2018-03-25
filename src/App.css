@@ -15,7 +15,7 @@ page {
     line-height: 24px;
     font-size: 16px;
     padding: 0 10px;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .table-empty {
@@ -54,7 +54,7 @@ page {
     -webkit-font-smoothing: inherit;
     padding: .5em;
     font-size: inherit;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     cursor: pointer;
 }
 
